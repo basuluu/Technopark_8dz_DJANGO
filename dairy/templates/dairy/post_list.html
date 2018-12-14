@@ -1,0 +1,19 @@
+{% extends 'dairy/base.html' %}
+  {% block content %}
+  <form method="POST">{% csrf_token %}
+    <select name='sort'>
+      <option value="no_popular">Сначала не популярные</option>
+      <option value="popular">Сначала популярные</option>
+      <option value="desc">Сначала новые</option>
+      <option value="asc">Сначала старые</option>
+    </select>
+    <button type="submit">Go</button>
+  </form>
+    {% for post in posts %}
+      <div class="post">
+        <h1><a href="{% url 'post_detail' id=post.id_post page=1%}">{{ post.title }}</a></h1>
+        <p>created: {{post.created_date}}</p>
+        <p> {{post.text}} </p>
+      </div>
+    {% endfor %}
+  {% endblock %}

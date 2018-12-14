@@ -1,0 +1,18 @@
+{% extends 'dairy/base.html' %}
+{% block content %}
+    <div>
+        <h1>Профиль</h1>
+        <a href="{% url 'edit_profile' %}">Редактировать профиль</a>
+        <p>Username: {{ user }}</p>
+        <p>First name: {{ user.first_name }}</p>
+        <p>Last name: {{ user.last_name }}</p>
+    </div>
+    <h1> Опубликованные посты: </h2>
+    {% for post in posts %}
+      <div class="post">
+        <h1><a href="{% url 'post_detail' id=post.id_post page=1%}">{{ post.title }}</a></h1>
+        <p>created: {{post.created_date}}</p>
+        <p> {{post.text}} </p>
+      </div>
+    {% endfor %}
+{% endblock %}

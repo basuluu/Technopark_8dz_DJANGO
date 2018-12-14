@@ -1,0 +1,26 @@
+h1 a {
+  color: #FCA205;
+}
+
+body {
+  padding-left: 25px;
+}
+
+.page-head{
+  background-color: #a3f2f0;
+  margin-top: 0;
+  padding: 20px 20px 20px 40px;
+}
+
+.comment-field{
+  width: 2px;
+  height: 10px;
+  background-color: #a3f2f0;
+}
+
+.comments_id{
+  padding: 7px 7px 8px;
+  border-bottom: 1px solid grey;
+  background: #f7f7f7;
+  line-height: 1.3em;
+}
